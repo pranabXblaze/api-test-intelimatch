@@ -32,5 +32,24 @@ async def filter_experts(
     ]
     return {"matches": results}
 
+experts = [
+    {
+        "name": "John Doe",
+        "qualification": "Bachelor's in Naval Engineering",
+        "experience_years": 15,
+        "specialization": ["Naval Architecture", "Civil Engineering"],
+        "languages": ["English", "German"],
+        "skills": ["Dockyard Operations", "Project Management"]
+    },
+    {
+        "name": "Jane Smith",
+        "qualification": "Master's in Civil Engineering",
+        "experience_years": 10,
+        "specialization": ["Structural Engineering", "Civil Engineering"],
+        "languages": ["English"],
+        "skills": ["Project Management"]
+    }
+]
 
+filter_experts(experts, panel="Naval Architecture", min_experience=13, required_skills=["Dockyard Operations"], language="German")
 uvicorn.run(app, port=8000)
